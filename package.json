@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.10",
+    "flowbite-react": "^0.8.0",
     "framer-motion": "^11.0.24",
     "jose": "^5.2.3",
     "js-cookie": "^3.0.5",

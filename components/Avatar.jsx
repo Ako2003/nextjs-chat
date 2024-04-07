@@ -4,21 +4,21 @@ import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Avatar as A, User
 export default function Avatar({ image, setImage}) {
 
     const avatars = [
-        {name: "avatar-1", src: "/avatars/avatar-1.png"},
-        {name: "avatar-2", src: "/avatars/avatar-2.png"},
-        {name: "avatar-3", src: "/avatars/avatar-3.png"},
-        {name: "avatar-4", src: "/avatars/avatar-4.png"},
-        {name: "avatar-5", src: "/avatars/avatar-5.png"},
-        {name: "avatar-6", src: "/avatars/avatar-6.png"},
-        {name: "avatar-7", src: "/avatars/avatar-7.png"},
-        {name: "avatar-8", src: "/avatars/avatar-8.png"},
-        {name: "avatar-9", src: "/avatars/avatar-9.png"},
+        {name: "Zephyr Stone", fileName: "avatar-1", src: "/avatars/avatar-1.png"},
+        {name: "Orion Drake", fileName: "avatar-2", src: "/avatars/avatar-2.png"},
+        {name: "Seraphina Vale", fileName: "avatar-3", src: "/avatars/avatar-3.png"},
+        {name: "Aurora Storm", fileName: "avatar-4", src: "/avatars/avatar-4.png"},
+        {name: "Phoenix Knight", fileName: "avatar-5", src: "/avatars/avatar-5.png"},
+        {name: "Nova Cascade", fileName: "avatar-6", src: "/avatars/avatar-6.png"},
+        {name: "Astrid Nightfall", fileName: "avatar-7", src: "/avatars/avatar-7.png"},
+        {name: "Atlas Everest", fileName: "avatar-8", src: "/avatars/avatar-8.png"},
+        {name: "Luna Nova", fileName: "avatar-9", src: "/avatars/avatar-9.png"},
     ]
 
     
     // Show the first avatar
     const [selected, setSelected] = useState(
-      avatars.find(avatar => avatar.name === "avatar-1").src
+      avatars.find(avatar => avatar.fileName === "avatar-1").src
     );
     
       useEffect(() => {
@@ -31,30 +31,31 @@ export default function Avatar({ image, setImage}) {
       },[selected, image])
   return (
     <div className="flex items-center gap-4">
-      <Dropdown placement="right-start">
+      <Dropdown size="xs" placement="right-end">
         <DropdownTrigger>
           <A
             isBordered
             as="button"
             className="transition-transform"
             src={selected}
+            name="Zephyr Stone"
             alt="Avatar"
             size="lg"
           />
         </DropdownTrigger>
-        <DropdownMenu aria-label="Profile Actions" variant="flat">
+        <DropdownMenu aria-label="Profile Actions" >
             {avatars.map((avatar, index) => {
-                return (
-                    <DropdownItem key={index} onClick={() => {setSelected(avatar.src); setImage(null);}}>
-                        <A
+              return (
+                <DropdownItem className="h-14" key={index} onClick={() => {setSelected(avatar.src); setImage(null);}}>
+                        <User
                             isBordered
-                            src={avatar.src}
-                            alt="Avatar"
+                            avatarProps={{src: avatar.src}}
+                            name={avatar.name}
                             size="lg"
                         />
-                    </DropdownItem>
-                )
-            })}
+                  </DropdownItem>
+                      )
+                    })}
         </DropdownMenu>
       </Dropdown>
     </div>
