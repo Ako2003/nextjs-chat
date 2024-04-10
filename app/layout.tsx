@@ -1,8 +1,9 @@
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import type { Metadata } from "next";
+import Menu from "@/components/Sidebar/Menu";
 import "./global.css"
 
-const inter = Inter({ subsets: ["latin"] });
+const open_sans = Open_Sans({ weight: "700", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,8 +17,11 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="en">
-        <body suppressHydrationWarning={true} className={inter.className}>
+        <body suppressHydrationWarning={true} className={open_sans.className}>
+          <div className="flex">
+            <Menu />
             {children}
+          </div>
         </body>
       </html>
   );
