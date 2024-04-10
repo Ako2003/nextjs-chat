@@ -13,7 +13,7 @@ import { RiMenuUnfoldLine } from "react-icons/ri";
 
 export default function Main() {
     const [toggle, setToggle] = useState(false)
-    const [width, setWidth] = useState(300)
+    const [width, setWidth] = useState('300')
     const menu = [
         {name: "Dashboard", icon: <HiChartPie size={20}/>},
         {name: "Contacts", icon: <TiContacts size={20} />},
@@ -21,7 +21,7 @@ export default function Main() {
     ]
 
     const handleToggle = () => {
-        setWidth(toggle ? 300 : 0)
+        setWidth(toggle ? '300' : '0')
         setToggle(!toggle)
     }
   return (
