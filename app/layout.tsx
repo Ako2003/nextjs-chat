@@ -18,10 +18,7 @@ export default function RootLayout({
   return (
       <html lang="en">
         <body suppressHydrationWarning={true} className={open_sans.className}>
-          <div className="flex">
-            <Menu />
             {children}
-          </div>
         </body>
       </html>
   );

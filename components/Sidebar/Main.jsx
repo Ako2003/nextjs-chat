@@ -1,87 +1,84 @@
-import React, { useState } from 'react'
-import {Avatar, Divider} from "@nextui-org/react";
+import React from 'react'
+import MenuTop from '@/constants/MenuTop.jsx'
+import {Avatar, Divider, Tooltip} from "@nextui-org/react";
 import { HiChartPie } from "react-icons/hi";
 import { TiContacts } from "react-icons/ti";
 import { FaCalendar } from "react-icons/fa6";
-import { RiMenuFoldLine } from "react-icons/ri";
-import { RiMenuUnfoldLine } from "react-icons/ri";
+import { IoIosArrowForward } from "react-icons/io";
 
-
-
-
-
-
-export default function Main() {
-    const [toggle, setToggle] = useState(false)
-    const [width, setWidth] = useState(300)
+export default function Main({hideMain, setHideMain, close, setClose, w, setW}) {
     const menu = [
         {name: "Dashboard", icon: <HiChartPie size={20}/>},
         {name: "Contacts", icon: <TiContacts size={20} />},
         {name: "Calendar", icon: <FaCalendar size={20}/>},
     ]
 
-    const handleToggle = () => {
-        setWidth(toggle ? 300 : 0)
-        setToggle(!toggle)
+    const handleHide = () => {
+        setHideMain(!hideMain)
     }
+
   return (
-    <section className={`h-screen border-r-1 relative `} style={{
-        width: `${width}px`
-    }}>
-        <div className='flex items-center justify-between'>
-            <div className='flex m-5 gap-3 items-center'>
-                <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" size="md" />
-                {!toggle && <strong>LOGO</strong>}
-            </div>
-            { toggle ? 
-                <RiMenuUnfoldLine className='m-5 cursor-pointer' onClick={handleToggle} size={20} />
-                :
-                <RiMenuFoldLine className='m-5 cursor-pointer' onClick={handleToggle} size={20} />
-            }
-        </div>
-        <Divider />
-        <div>
-            <ul>
-                <li className='p-5 pb-2 text-xs text-[#585858]'>
-                    <div>Main Menu</div>
-                </li>
-                {menu.map((item, index) => (
-                    <li key={index} className={`flex items-center p-5 gap-4 ${toggle && "justify-center"}`}>
-                        {item.icon}
-                        {!toggle &&
-                            <span>{item.name}</span>
-                        }
+      <section style={{
+            transition: "all 1s",
+            transitionTimingFunction: "ease-in-out",
+            width: `${w}px`,
+      }}>
+        <MenuTop close={close} setClose={setClose} setW={setW} />
+        {!hideMain &&
+        <section className={`h-screen border-r-1 relative overflow-y-auto`} style={{
+            transition: "all 1s",
+            transitionTimingFunction: "ease-in-out",
+        }}>
+            <div>
+                <ul>
+                    <li className='p-5 pb-2 text-xs text-[#585858]'>
+                        <div>Main Menu</div>
                     </li>
-                ))}
-            </ul>
-        </div>
-        <Divider />
-        <div>
-            <ul>
-                <li className='p-5 pb-2 text-xs text-[#585858]'>
-                    <div>Futures</div>
-                </li>
-                {menu.map((item, index) => (
-                    <li key={index} className={`flex items-center p-5 gap-4 ${toggle && "justify-center"}`}>
-                        {item.icon}
-                        {!toggle &&
-                            <span>{item.name}</span>
-                        }
-                    </li>
-                ))}
-            </ul>
-        </div>
-        <Divider className='absolute bottom-20'/>
-        <div className={`absolute bottom-5 mx-5 ${toggle && "left-7"}`}>
-            <div className='flex justify-center items-center gap-2'>
-                <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" size="md" />
-                {!toggle &&
-                    <div>
-                        <p>Akif Mursalov</p>
-                        <p className='text-xs text-[#585858]'>akifmursalov@gmail.com</p>
-                    </div>}
+                    {menu.map((item, index) => (
+                        <li key={index} onClick={() => handleHide()} className={`flex items-center p-5 cursor-pointer ${close && "justify-center"}`} style={{
+                            transition: "all 0.5s",
+                        }}>
+                            <div className='flex gap-4'>
+                                {item.icon}
+                                {!close &&
+                                <div>
+                                    <span>{item.name}</span>
+                                </div>
+                                }
+                            </div>
+                        </li>
+                    ))}
+                </ul>
             </div>
-        </div>
-    </section>
+            <Divider />
+            <div>
+                <ul>
+                    <li className='p-5 pb-2 text-xs text-[#585858]'>
+                        <div>Futures</div>
+                    </li>
+                    {menu.map((item, index) => (
+                        <li key={index} className={`flex items-center p-5 gap-4 cursor-pointer ${close && "justify-center"}`}>
+                            {item.icon}
+                            {!close &&
+                                <span>{item.name}</span>
+                            }
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <Divider className='absolute bottom-20'/>
+            <div className={`absolute bottom-5 left-7`}>
+                <div className='flex justify-center items-center gap-2'>
+                    <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" size="md" />
+                    {!close &&
+                        <div>
+                            <p>Akif Mursalov</p>
+                            <p className='text-xs text-[#585858]'>akifmursalov@gmail.com</p>
+                        </div>}
+                </div>
+            </div>
+        </section>
+}
+        </section>
   )
 }
