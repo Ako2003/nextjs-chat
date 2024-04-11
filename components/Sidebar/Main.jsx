@@ -13,7 +13,7 @@ import { RiMenuUnfoldLine } from "react-icons/ri";
 
 export default function Main() {
     const [toggle, setToggle] = useState(false)
-    const [width, setWidth] = useState('300')
+    const [width, setWidth] = useState(300)
     const menu = [
         {name: "Dashboard", icon: <HiChartPie size={20}/>},
         {name: "Contacts", icon: <TiContacts size={20} />},
@@ -21,11 +21,13 @@ export default function Main() {
     ]
 
     const handleToggle = () => {
-        setWidth(toggle ? '300' : '0')
+        setWidth(toggle ? 300 : 0)
         setToggle(!toggle)
     }
   return (
-    <section className={`h-screen border-r-1 relative w-[${width}px]`}>
+    <section className={`h-screen border-r-1 relative `} style={{
+        width: `${width}px`
+    }}>
         <div className='flex items-center justify-between'>
             <div className='flex m-5 gap-3 items-center'>
                 <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" size="md" />
