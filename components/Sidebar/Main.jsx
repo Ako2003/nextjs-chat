@@ -23,7 +23,7 @@ export default function Main({hideMain, setHideMain, close, setClose, w, setW}) 
             transitionTimingFunction: "ease-in-out",
             width: `${w}px`,
       }}>
-        <MenuTop close={close} setClose={setClose} setW={setW} />
+        {/* <MenuTop close={close} setClose={setClose} setW={setW} /> */}
         {!hideMain &&
         <section className={`h-screen border-r-1 relative overflow-y-auto`} style={{
             transition: "all 1s",
