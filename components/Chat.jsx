@@ -16,7 +16,7 @@ export default function Chat() {
     <section className='grid bg-red-300 border-t-1 relative'>
         {/* <h1 className='absolute bg-slate-700 opacity-90 text-gray-200 px-3 rounded-full top-24 right-[50%]'>Hello</h1> */}
         {messages.map((message) => (
-            <div className={`p-10 gap-2 max-w-screen-sm ${message.id % 2 ? "justify-self-start pt-15" : "justify-self-end"} ${message.id === 1 && 'mt-20'} ${message.id === messages.length && 'mb-8'}`}>
+            <div className={`m-4 gap-2 max-w-screen-md ${message.id % 2 ? "justify-self-start" : "justify-self-end"} ${message.id === 1 && 'mt-32'} ${message.id === messages.length && 'mb-20'}`}>
                 {message.id % 2 ? 
                 <div className='flex items-end gap-2'>
                     <Avatar src={message.src} style={{

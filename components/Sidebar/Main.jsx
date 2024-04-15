@@ -4,7 +4,6 @@ import {Avatar, Divider, Tooltip} from "@nextui-org/react";
 import { HiChartPie } from "react-icons/hi";
 import { TiContacts } from "react-icons/ti";
 import { FaCalendar } from "react-icons/fa6";
-import { IoIosArrowForward } from "react-icons/io";
 
 export default function Main({hideMain, setHideMain, close, setClose, w, setW}) {
     const menu = [

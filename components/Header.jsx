@@ -3,7 +3,7 @@ import {Avatar} from "@nextui-org/react";
 
 export default function Header() {
   return (
-    <section className='fixed bg-[white] w-full z-10'>
+    <section className='fixed bg-[white] w-[81%] z-10'>
       <div className='m-5'>
         <div className='flex justify-between items-center'>
           <div className='flex gap-3'>
@@ -16,8 +16,8 @@ export default function Header() {
               <p className='text-xs text-[#585858] gap-4'>last active 14:55</p>
             </div>
           </div>
-          <div className='mx-24'>
-            <img src='/search.svg' width={20}/>
+          <div className='mx-5'>
+            <img src='/search.svg' width={25}/>
           </div>
         </div>
       </div>
