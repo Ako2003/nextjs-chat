@@ -3,9 +3,9 @@ import {Avatar} from "@nextui-org/react";
 
 export default function Header() {
   return (
-    <section className='fixed bg-[white] w-[81%] z-10'>
+    <section className='fixed bg-[white] w-screen z-10'>
       <div className='m-5'>
-        <div className='flex justify-between items-center'>
+        <div className='flex items-center'>
           <div className='flex gap-3'>
             <Avatar src="https://i.pravatar.cc/150?u=a04258a2462d826712d" size="md" />
             <div>
