@@ -8,6 +8,18 @@ export default function Contacts({showContacts, setShowContacts, close, setClose
     {id: 1, name: "Jone", surname: "Smith", icon: <TiContacts size={20} />},
     {id: 2, name: "Doe", surname: "Mark", icon: <TiContacts size={20} />},
     {id: 3, name: "John", surname: "Swift", icon: <TiContacts size={20} />},
+    {id: 4, name: "Doe", surname: "Mark", icon: <TiContacts size={20} />},
+    {id: 5, name: "John", surname: "Swift", icon: <TiContacts size={20} />},
+    {id: 6, name: "Doe", surname: "Mark", icon: <TiContacts size={20} />},
+    {id: 7, name: "John", surname: "Swift", icon: <TiContacts size={20} />},
+    {id: 8, name: "Mark", surname: "Twen", icon: <TiContacts size={20} />},
+    {id: 9, name: "John", surname: "Swift", icon: <TiContacts size={20} />},
+    {id: 10, name: "Doe", surname: "Mark", icon: <TiContacts size={20} />},
+    {id: 11, name: "John", surname: "Swift", icon: <TiContacts size={20} />},
+    {id: 12, name: "Doe", surname: "Mark", icon: <TiContacts size={20} />},
+    {id: 13, name: "John", surname: "Swift", icon: <TiContacts size={20} />},
+    {id: 14, name: "Doe", surname: "Mark", icon: <TiContacts size={20} />},
+    {id: 15, name: "John", surname: "Swift", icon: <TiContacts size={20} />},
   ]
   return (
     <section style={{

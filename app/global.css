@@ -17,3 +17,11 @@ body{
 ::-webkit-scrollbar {
     width: 0px;
   }
+
+  .active-button img {
+    filter: none; /* No filter for active state */
+}
+
+.inactive-button img {
+    filter: grayscale(100%); /* Grayscale filter for inactive state */
+}

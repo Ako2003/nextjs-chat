@@ -16,18 +16,19 @@ export default function Main({hideMain, setHideMain, close, setClose, w, setW}) 
         setHideMain(!hideMain)
     }
 
-  return (
+    return (
       <section style={{
             transition: "all 1s",
             transitionTimingFunction: "ease-in-out",
             width: `${w}px`,
       }}>
-        <MenuTop close={close} setClose={setClose} setW={setW} />
         {!hideMain &&
         <section className={`h-screen border-r-1 relative overflow-y-auto`} style={{
             transition: "all 1s",
             transitionTimingFunction: "ease-in-out",
         }}>
+        <MenuTop close={close} setClose={setClose} setW={setW} />
+
             <div>
                 <ul>
                     <li className='p-5 pb-2 text-xs text-[#585858]'>
