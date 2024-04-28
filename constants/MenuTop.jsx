@@ -8,7 +8,7 @@ export default function MenuTop({close, setClose, setW}) {
         setClose(!close)
     }
     return (
-        <div className='border'>
+        <div className='w-full'>
             <div className='flex items-center justify-between'>
                 {!close && 
                     <div className='flex m-5 gap-3 items-center' >
