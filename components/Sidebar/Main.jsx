@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from 'react'
 import Link from "next/link";
 import MenuTop from '@/constants/MenuTop.jsx'
@@ -12,9 +13,7 @@ import { IoMoon } from "react-icons/io5";
 
 
 export default function Main({setMenu, close, setClose, w, setW}) {
-    const [theme, setTheme] = useState(
-        localStorage.getItem("theme") ? localStorage.getItem('theme') : ''
-    );
+    const [theme, setTheme] = useState();
     const sidebarMenu = [
         {name: "Dashboard", icon: <HiChartPie size={20}/>, url: "/dashboard", sidebar: ""},
         {name: "Contacts", icon: <TiContacts size={20} />, url: "#", sidebar: "contacts"},
@@ -39,10 +38,11 @@ export default function Main({setMenu, close, setClose, w, setW}) {
 
     useEffect(() => {
         console.log(theme)
+        setTheme(localStorage.getItem("theme") ? localStorage.getItem('theme') : '');
         if (theme === 'dark') {
             document.documentElement.classList.add('dark');
         }
-    },[])
+    },[theme])
     return (
         <Card>
             <section style={{

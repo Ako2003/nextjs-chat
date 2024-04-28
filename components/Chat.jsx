@@ -9,10 +9,13 @@ export default function Chat() {
     const [messages, setMessages] = useState([]);
     const [active, setActive] = useState(false)
 
-    // Get the url
-    const location = window.location.href
     const params = useParams()
-
+    
+    // Get the url
+    useEffect(() => {
+        const location = window.location.href
+    }, [])
+    
     const  currentTime = () => {
         const date = new Date()
         const hour = date.getHours()

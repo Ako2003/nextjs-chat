@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Avatar, Card } from "@nextui-org/react";
 import { useParams } from "next/navigation";
 
 export default function Header() {
+  const [location, setLocation] = useState('')
   const params = useParams();
-  const location = window.location.href
+  useEffect(() => {
+    setLocation(window.location.href)
+  }, [])
 
   return (
     <Card style={{
